@@ -2,7 +2,6 @@
   <div id="nav">
     <router-link to="/">Inicio</router-link>
     <router-link to="/list-products">Listado de artículos </router-link>
-    <router-link to="/views-products">Vista de productos </router-link>
     <router-link to="/cart">Cesta </router-link>
     <router-link to="/pay">Pago</router-link>
   </div>
@@ -13,6 +12,10 @@
 
 html, body{
   margin: 0;
+}
+
+ul li{
+ list-style: none;
 }
 
 #app {
