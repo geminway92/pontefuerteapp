@@ -31,7 +31,6 @@ export default {
       } else {
         localStorage.setItem('cart', this.localStorageArray)
       }
-      console.log(this.localStorageArray)
       this.sumCost()
     },
 
@@ -39,7 +38,6 @@ export default {
       this.localStorageArray.forEach(product => {
         this.costTotal += product.pedido.quantify * product.prices
       })
-      console.log(this.costTotal)
     }
   },
 
