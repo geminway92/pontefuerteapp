@@ -1,15 +1,18 @@
 <template>
   <div class="carousel">
-    <button id="retroceder" @click="retrocederFoto">Retroceder</button>
     <div id="imagen">
+    <ChevronLeft id="retroceder" @click="retrocederFoto"/>
       <img :src="carrusel" alt="">
+    <ChevronRight id="avanzar" @click="pasarFoto"/>
     </div>
-    <button id="avanzar" @click="pasarFoto">Avanzar</button>
 </div>
 
 </template>
 
 <script>
+import ChevronLeft from '../components/ChevronLeft.vue'
+import ChevronRight from '../components/ChevronRight.vue'
+
 export default {
   data () {
     return {
@@ -17,6 +20,10 @@ export default {
       posicionActual: 0,
       carrusel: null
     }
+  },
+  components: {
+    ChevronLeft,
+    ChevronRight
   },
 
   methods: {
@@ -51,20 +58,28 @@ export default {
 <style scoped>
 
 .carousel {
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
 }
 
 #imagen{
   width: 100%;
+  background: #dedede;
   height: 400px;
-  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #imagen img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+}
+
+#retroceder, #avanzar{
+  border: none;
+  height: 40px;
 }
 
 </style>
