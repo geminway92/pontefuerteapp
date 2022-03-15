@@ -29,7 +29,7 @@ export default {
       if (screen.width >= 700 && screen.width < 850) {
         const { cookies } = useCookies()
         this.cookies = cookies
-        console.log(this.cookies)
+
         this.cookies.set('isDeviceTablet', 'true')
         this.isTablet = this.cookies.get('isDeviceTablet')
       }

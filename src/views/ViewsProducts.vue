@@ -113,13 +113,14 @@ export default {
       if (localStorage.getItem('cart') != null) {
         this.localStorageArray = JSON.parse(localStorage.getItem('cart'))
       } else {
-        localStorage.setItem('cart', this.localStorageArray)
+        localStorage.setItem('cart', JSON.stringify(this.localStorageArray))
       }
     }
   },
 
   created () {
     this.filterByID()
+    this.checkLocalStorage()
   }
 }
 

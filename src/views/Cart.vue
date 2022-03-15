@@ -39,16 +39,15 @@ export default {
   },
   methods: {
     checkLocalStorage () {
+      console.log(localStorage.getItem('cart'))
       if (localStorage.getItem('cart') != null) {
         this.localStorageArray = JSON.parse(localStorage.getItem('cart'))
       } else {
-        localStorage.setItem('cart', this.localStorageArray)
+        localStorage.setItem('cart', JSON.stringify(this.localStorageArray))
       }
-      console.log(this.localStorageArray)
     },
 
     goPay () {
-      console.log('voy a pago')
       this.$router.push({ name: 'Pay' })
     }
   },
