@@ -3,7 +3,7 @@
     <h1>Pago</h1>
     <div class="container-extract">
       <h2>El pago total es de {{this.costTotal}} €</h2>
-      <ButtonBase textBotton="Pagar"></ButtonBase>
+      <ButtonBase textBotton="Pagar" :disabled="this.costTotal <= 0" @click="pay"></ButtonBase>
     </div>
 
   </div>
@@ -12,6 +12,7 @@
 
 <script>
 import ButtonBase from '../components/ButtonBase.vue'
+import Swal from 'sweetalert2'
 
 export default {
   name: 'Pay',
@@ -38,6 +39,25 @@ export default {
       this.localStorageArray.forEach(product => {
         this.costTotal += product.pedido.quantify * product.prices
       })
+    },
+
+    pay () {
+      Swal.fire({
+        title: '¿Estás seguro de hacer la compra?',
+        showDenyButton: true,
+        confirmButtonText: 'Sí',
+        denyButtonText: 'No'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire('Compra realizada', '', 'success')
+          this.resetCars()
+        }
+      })
+    },
+
+    resetCars () {
+      localStorage.setItem('cart', JSON.stringify([]))
+      this.costTotal = 0
     }
   },
 
@@ -49,6 +69,13 @@ export default {
 </script>
 
 <style scoped>
+button{
+  margin-bottom: 1em;
+}
+
+button:disabled{
+  background: #fe9a52;
+}
 .pay{
   display: flex;
   flex-direction: column;

@@ -1,43 +1,16 @@
 <template>
-<div v-if="isTablet === 'true'">
-
   <div id="nav">
     <router-link to="/">Inicio</router-link>
-    <router-link to="/list-products">Listado de artículos </router-link>
+    <router-link to="/list-products">Productos </router-link>
     <router-link to="/cart">Cesta </router-link>
     <router-link to="/pay">Pago</router-link>
   </div>
   <router-view/>
-</div>
-  <div v-else class="noTablet">
-    <h1>El dispositivo no es compatible</h1>
-  </div>
-</template>
 
+</template>
 <script>
-import { useCookies } from 'vue3-cookies'
 
 export default {
-  data () {
-    return {
-      isTablet: undefined,
-      cookies: undefined
-    }
-  },
-  methods: {
-    checkScreen () {
-      if (screen.width >= 700 && screen.width < 850) {
-        const { cookies } = useCookies()
-        this.cookies = cookies
-
-        this.cookies.set('isDeviceTablet', 'true')
-        this.isTablet = this.cookies.get('isDeviceTablet')
-      }
-    }
-  },
-  created () {
-    this.checkScreen()
-  }
 }
 </script>
 
@@ -67,7 +40,6 @@ ul li{
   justify-content: center;
   align-items: center;
   background: #56595c;
-  gap: 0.5em;
 }
 
 #nav a {

@@ -39,7 +39,6 @@ export default {
   },
   methods: {
     checkLocalStorage () {
-      console.log(localStorage.getItem('cart'))
       if (localStorage.getItem('cart') != null) {
         this.localStorageArray = JSON.parse(localStorage.getItem('cart'))
       } else {
@@ -65,11 +64,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  text-align: center;
 }
 
 .container-product{
-  width: 80%;
   display: flex;
   justify-content: center;
 }
@@ -83,8 +81,7 @@ th{
   padding: 1em;
   border: none;
 }
-table{
-  }
+
 table img {
   width: 200px;
 }
@@ -93,4 +90,20 @@ tbody{
   text-align: center;
 }
 
+@media screen and (max-width: 550px ) {
+table{
+  width: 50%;
+  margin-bottom: 1em;
+}
+
+th{
+  padding: 5px;
+  font-size: 12px;
+}
+
+table img {
+  width: 60px;
+}
+
+}
 </style>

@@ -82,4 +82,17 @@ export default {
   height: 40px;
 }
 
+@media screen and (max-width: 535px) {
+#retroceder{
+  position: absolute;
+  left: 0;
+}
+
+#avanzar{
+  position: absolute;
+  right: 0;
+}
+
+}
+
 </style>

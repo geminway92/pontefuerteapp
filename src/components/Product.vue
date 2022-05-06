@@ -4,8 +4,8 @@
     <h2>{{product.nameProduct}}</h2>
       <img :src="product.image" alt="">
       <div class="container-starts">
-        <ul  v-for="valoration in product.valoration" :key="valoration">
-          <li>
+        <ul >
+          <li v-for="valoration in product.valoration" :key="valoration">
             <StartComponent/>
           </li>
         </ul>
@@ -37,18 +37,12 @@ export default {
 </script>
 
 <style scoped>
-.container-product{
-  display: flex;
-  flex-wrap: wrap;
-  cursor:pointer;
-}
 
 .product {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* width: 50%; */
 }
 
 img{
@@ -65,12 +59,13 @@ img{
 .container-starts ul {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  gap: 1em;
+  padding: 0;
 }
 
 .container-starts svg{
   width:20px;
   color: #ff6900;
 }
+
 </style>

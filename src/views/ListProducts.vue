@@ -1,6 +1,8 @@
 <template>
   <h1>Productos</h1>
-  <Product v-for="product in products" :key="product.name" :product="product"/>
+  <div class="container-product">
+    <Product v-for="product in products" :key="product.name" :product="product"/>
+  </div>
 </template>
 
 <script>
@@ -33,11 +35,23 @@ export default {
     }
   }
 }
-
 </script>
 
 <style scoped>
+
   h1{
     text-align: center;
   }
+
+  .container-product {
+  display: flex;
+  flex-direction: column;
+  cursor:pointer;
+}
+
+@media screen and ( min-width: 1050px ) {
+  .container-product {
+    flex-direction: row;
+  }
+}
 </style>

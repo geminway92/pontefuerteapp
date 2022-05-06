@@ -1,5 +1,5 @@
 <template>
-  <h1>Vista de productos</h1>
+  <h1 class="title">Vista de productos</h1>
   <div class="container-view">
     <div class="container-image">
       <img :src="this.productCurrent.image" alt="">
@@ -35,7 +35,7 @@
             <p>{{this.productCurrent.prices}} €</p>
         </div>
         <ButtonBase textBotton="Añadir al Carrito" class="buttonBase" @click="addCart"/>
-        <ul>Especificaciones:
+        <ul class="especificacion">Especificaciones:
           <li>Alto: 210 cm</li>
           <li>Ancho: 60 cm</li>
           <li>Longitud: 127 cm</li>
@@ -105,8 +105,6 @@ export default {
       this.checkLocalStorage()
       this.localStorageArray.push(this.productCurrent)
       localStorage.setItem('cart', JSON.stringify(this.localStorageArray))
-      console.log(this.localStorageArray)
-      console.log(this.productCurrent.pedido)
     },
 
     checkLocalStorage () {
@@ -127,19 +125,23 @@ export default {
 </script>
 
 <style scoped>
+.title{
+  text-align: center;
+}
 
 option {
   font-size: 10px;
 }
 .container-view{
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  height: 50%;
 }
 
 .container-image{
   width: 45%;
+  max-width: 450px;
 }
 .container-image img {
   width: 100%;
@@ -147,7 +149,6 @@ option {
 }
 
 .container-info{
-  width: 45%;
   text-align: center;
 }
 
@@ -164,6 +165,7 @@ option {
   justify-content: center;
   align-items: center;
   margin: 0;
+  padding: 10px;
 }
 
 .container-starts svg{
@@ -181,16 +183,18 @@ option {
 .container-details {
   background: #e8edf1;
   padding: 1em;
+  margin-bottom: 1em;
 }
 .container-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-
+  grid-template-columns: [x0] 1fr [x1] 1fr ;
+  grid-template-rows: [y0] 1fr [y1]
 }
 
 .container-details p {
   font-size: 2em;
   font-weight: bold;
+   grid-column: x0 / x2;
 }
 
 .container-color, .container-quantity{
@@ -201,4 +205,15 @@ option {
   align-items: center;
 }
 
+.especificacion{
+  padding: 0;
+  text-align: center;
+}
+
+@media screen and (min-width: 630px) {
+  .container-view{
+  flex-direction: row;
+  justify-content: space-around;
+}
+}
 </style>

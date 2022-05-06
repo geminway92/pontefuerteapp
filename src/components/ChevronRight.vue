@@ -16,7 +16,7 @@
 </script>
 <style scoped>
 button{
-  background: #dedede;
+  background: transparent;
 }
 
 button:hover path {
