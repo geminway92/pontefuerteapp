@@ -48,6 +48,7 @@
 <script>
 import StartComponent from '../components/StartComponent.vue'
 import ButtonBase from '../components/ButtonBase.vue'
+import Swal from 'sweetalert2'
 
 export default {
   name: 'ViewsProducts',
@@ -105,6 +106,12 @@ export default {
       this.checkLocalStorage()
       this.localStorageArray.push(this.productCurrent)
       localStorage.setItem('cart', JSON.stringify(this.localStorageArray))
+      Swal.fire({
+        icon: 'success',
+        title: 'Añadido a cesta',
+        showConfirmButton: false,
+        timer: 1500
+      })
     },
 
     checkLocalStorage () {
