@@ -70,7 +70,6 @@ export default {
 .container-product{
   display: flex;
   justify-content: center;
-  background: red;
 }
 
 .title-table{
