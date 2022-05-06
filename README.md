@@ -34,11 +34,11 @@ https://pontefuerte.netlify.app/
 ### Reproducir en local
 Clona el proyecto
 ```
-  git clone https://github.com/geminway92/cultura-y-ocio-malaga.git
+  git clone https://github.com/geminway92/pontefuerteapp
 ```
 Entra en la carpeta
 ```
-  cd taperia-larondenia
+  cd pontefuerteapp
 ```
 Instala las dependencias del proyecto
 ```
