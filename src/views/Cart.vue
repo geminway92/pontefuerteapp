@@ -67,10 +67,6 @@ export default {
   text-align: center;
 }
 
-.container-product{
-  background: red;
-}
-
 .title-table{
   background: #e8edf1;
 }
