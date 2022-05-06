@@ -84,7 +84,7 @@ button:disabled{
 }
 .container-extract{
   background: #e8edf1;
-  width: 60%;
+  padding: 1em;
   text-align: center;
 }
 </style>
