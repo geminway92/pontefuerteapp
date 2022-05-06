@@ -70,6 +70,7 @@ export default {
 .container-product{
   display: flex;
   justify-content: center;
+  background: red;
 }
 
 .title-table{
@@ -99,6 +100,10 @@ table{
 th{
   padding: 5px;
   font-size: 12px;
+}
+
+.container-product{
+  width: min-content;
 }
 
 table img {
