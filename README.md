@@ -27,9 +27,9 @@ https://pontefuerte.netlify.app/
 ### Tecnologías
 - Maquetación: HTML5
 - Estilos: CSS
-- Funcionalidad: VueJS, Vue Router, VueX
-- Empaquetador: webpack
-- Librerias: axios, sweetAlert
+- Funcionalidad: VueJS, Vue Router
+- Empaquetador: Webpack
+- Librerias: Axios, SweetAlert
 
 ### Reproducir en local
 Clona el proyecto
